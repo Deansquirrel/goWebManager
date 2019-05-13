@@ -23,6 +23,7 @@ func init() {
 }
 
 func main() {
+	log.Debug(global.Version)
 	//解析命令行参数
 	{
 		global.Args.Definition()
