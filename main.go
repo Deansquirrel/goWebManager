@@ -23,7 +23,6 @@ func init() {
 }
 
 func main() {
-	log.Debug(global.Version)
 	//解析命令行参数
 	{
 		global.Args.Definition()
@@ -105,6 +104,7 @@ func (p *program) Start(s service.Service) error {
 }
 
 func (p *program) run() error {
+	log.Debug(global.Version)
 	//服务所执行的代码
 	log.Warn("Service Starting")
 	defer log.Warn("Service Started")
