@@ -8,14 +8,14 @@ import (
 const (
 	//PreVersion = "1.0.1 Build20190513"
 	//TestVersion = "0.0.0 Build20190101"
-	Version = "0.0.0 Build20190101"
+	Version = "1.0.2 Build20190520"
 )
 
 const (
-	//http连接超时时间
-	HttpConnectTimeout = 30
-	//心跳时间间隔
-	HeartBeatDuration = 60
+//http连接超时时间
+//HttpConnectTimeout = 30
+//心跳时间间隔
+//HeartBeatDuration = 60
 )
 
 var Ctx context.Context

@@ -23,6 +23,7 @@ func init() {
 }
 
 func main() {
+	fmt.Println(global.Version)
 	//解析命令行参数
 	{
 		global.Args.Definition()
@@ -96,15 +97,15 @@ func (p *program) Start(s service.Service) error {
 			err := p.Stop(s)
 			if err != nil {
 				fmt.Println(err.Error())
-				log.Error(fmt.Sprintf("stop error: %s", err.Error()))
 			}
+			time.Sleep(time.Second * 3)
+			os.Exit(0)
 		}
 	}()
 	return err
 }
 
 func (p *program) run() error {
-	log.Debug(global.Version)
 	//服务所执行的代码
 	log.Warn("Service Starting")
 	defer log.Warn("Service Started")
@@ -118,7 +119,6 @@ func (p *program) Stop(s service.Service) error {
 	log.Warn("Service Stopping")
 	defer func() {
 		log.Warn("Service Stopped")
-		os.Exit(0)
 	}()
 	{
 		//TODO 停止服务时清理内容
